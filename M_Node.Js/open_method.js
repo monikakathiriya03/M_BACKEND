@@ -15,7 +15,7 @@ const fs = require("fs");
 // console.log('File open Sucessfully');
 
 //=======>>>>>>>>
-// Directly create automatically new file with you user create with 'w' parameter
+// Directly create automatically new file with out you create with 'w' parameter
 
 // *****Asyncronous Method*****
 
