@@ -5,20 +5,24 @@ const fs = require("fs");
 
 // console.log(add(5,3));
 
-// Asyncronous Method
+// *****Asyncronous Method*****
+
+//*-------Open File-------*
 // fs.open('../abc.txt',(err,data)=>{
 //     if(err){
 //         console.log('Failed to open File');
 //     }else 
 //     console.log('File open Sucessfully');
-// })
+// });
 
 
-// Syncronous Method
+// *****Syncronous Method*****
+
 // fs.openSync('abc.txt');
 // console.log('File open Sucessfully');
 
-// Read Method
+// *-------Read Method-------*
+
 // let t1 = performance.now();
 // console.log('Product is:',product(5,3));
 // fs.readFile('../abc.txt','utf-8',(err,data)=>{
@@ -35,23 +39,25 @@ const fs = require("fs");
 // console.log('Time Difference is:',t2-t1);
 
 
-// //Write Method
+// *-------Write Method-------*
+
 // let txt = `#include <Stdio.h>
 // // int main(){
-// //     printf("Welcome to Skillqode");
-// //     printf("Learning NodeJS");
-// // }`;
+// // //     printf("Welcome to Skillqode");
+// // //     printf("Learning NodeJS");
+// // // }`;
 
-// fs.writeFile("../basic.c",txt,(err,data)=>{
-//    if(err)console.log("Failed to write file");
-//    else console.log("File Written Sucessfully");
-// });
+// // fs.writeFile("../basic.c",txt,(err,data)=>{
+// //    if(err)console.log("Failed to write file");
+// //    else console.log("File Written Sucessfully");
+// // });
 
 // fs.writeFileSync("hello.c",txt);
 // console.log("File Written Sucessfully");
 
 
-//Append Method
+// *-------Append Method-------*
+
 // let txt = `good morning`;
 // fs.appendFile("basic.c",txt,(err,data)=>{
 //     if(err)console.log("Failed to write File");
@@ -59,9 +65,49 @@ const fs = require("fs");
 //     console.log("File Append Sucessfully");
 // });
 
-//Close
+// fs.appendFileSync("basic.c",txt);
+// console.log("File Append Sucessfully");
+
+// *-------Close Method-------*
+
 // fs.close(2,(err) =>{
 //     if(err)console.log("Failed to close File");
 //     else 
 //     console.log("file Closed Sucessfully");
 // });
+
+// fs.closeSync(2);
+// console.log("file Closed Sucessfully");
+
+// *-------Rename File-------*
+
+// fs.rename('basic.c', 'b.c',(err) =>{
+//   if (err) 
+//   console.log('File Renamed!');
+// });
+
+// fs.renameSync('basic.c', 'b.c');
+// console.log('File Renamed!');
+
+// *-------Update File-------*
+               //  (1)
+// fs.appendFile('basic.c', ' This is my text.', (err) => {
+//     if (err) 
+//     console.log('Updated!');
+//   });
+
+// fs.appendFileSync('basic.c', ' This is my text.');
+// console.log('Updated!');
+
+              //  (2)
+// fs.writeFile('../abc.txt', 'My Hobbies',(err) => {
+//     if (err)
+//     console.log('Replaced!');
+//   });
+  
+
+// *-------Delete Files-------*
+// fs.unlink('hello.c',(err) => {
+//     if (err)
+//     console.log('File deleted!');
+//   });
