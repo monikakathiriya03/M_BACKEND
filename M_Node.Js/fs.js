@@ -8,7 +8,7 @@ const fs = require("fs");
 // *****Asyncronous Method*****
 
 //*-------Open File-------*
-// fs.open('../abc.txt',(err,data)=>{
+// fs.open('../abc.txt','w',(err,data)=>{
 //     if(err){
 //         console.log('Failed to open File');
 //     }else 
@@ -18,7 +18,7 @@ const fs = require("fs");
 
 // *****Syncronous Method*****
 
-// fs.openSync('abc.txt');
+// fs.openSync('abc.txt','w');
 // console.log('File open Sucessfully');
 
 // *-------Read Method-------*
