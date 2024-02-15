@@ -30,7 +30,7 @@ const fs = require("fs");
 //     console.log('Failed to read File');
 // else 
 // console.log(data);
-// });
+// }); console.log(t1);
 
 // let data = fs.readFileSync('../abc.txt','utf-8');
 // console.log(data);
