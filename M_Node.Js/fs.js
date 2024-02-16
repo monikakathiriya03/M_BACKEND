@@ -42,15 +42,15 @@ const fs = require("fs");
 // *-------Write Method-------*
 
 // let txt = `#include <Stdio.h>
-// // int main(){
-// // //     printf("Welcome to Skillqode");
-// // //     printf("Learning NodeJS");
-// // // }`;
+//  int main(){
+//      printf("Welcome to Skillqode");
+//      printf("Learning NodeJS");
+//  }`;
 
-// // fs.writeFile("../basic.c",txt,(err,data)=>{
-// //    if(err)console.log("Failed to write file");
-// //    else console.log("File Written Sucessfully");
-// // });
+// fs.writeFile("./basic.c",txt,(err,data)=>{
+//    if(err)console.log("Failed to write file");
+//    else console.log("File Written Sucessfully");
+// });
 
 // fs.writeFileSync("hello.c",txt);
 // console.log("File Written Sucessfully");
