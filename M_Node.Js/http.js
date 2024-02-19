@@ -10,6 +10,9 @@ const server = http.createServer((req,res)=>{
     res.end('Welcome to Local Servar....');
 });
 
+
+//second method
+
 // const server = http.createServer();
 // server.on('request',(req,res)=>{
 //     res.setHeader('Content-type','text/html');
