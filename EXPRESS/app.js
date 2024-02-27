@@ -50,8 +50,8 @@ let myFun = (req, res, next) =>{
 
     // app.use(express.json()); // built-in 
     // app.use(express.urlencoded({ extended: true })); // built-in
-    app.use('/hello',express.static(path.join(__dirname, 'public')));  // built-in
-
+    app.use('/hello',express.static(path.join(__dirname,'public')));  // built-in
+    
     app.use(morgan('dev'));
     app.get('/',myFun,(req, res) =>{
         // console.log(req.body);
