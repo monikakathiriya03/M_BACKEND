@@ -57,10 +57,18 @@ let myFun = (req, res, next) =>{
         // console.log(req.body);
         res.send('about');
     });
+
+//     app.use(express.static(path.join(__dirname, 'public')));
+// app.get('/page', (req, res) => {
+//     // Read the HTML file
+//     const htmlPath = path.join(__dirname, 'public', 'index.html');
+//     res.sendFile(htmlPath);
+// });
+    
     app.post('/',(req, res) =>{
         console.log(req.body);
         res.send('Post Method');
-    });
+    })
 
     app.listen(port,()=>{
         console.log('Server Start at http://localhost:2828');
