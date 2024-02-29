@@ -110,6 +110,43 @@
 });
 
 
-app.listen(port,()=>{
-    console.log('Server Start at http://localhost:2828');
+// app.listen(port,()=>{
+//     console.log('Server Start at http://localhost:2828');
+// });
+
+
+//*---------29-02-2024----------*
+
+// Replace Single Product
+app.put('/products/replace-product',(req, res)=>{
+    const id = +req.query.id;
+    let productIndex = Products.findIndex((item)=>item.id === id);
+    let product = Products[productIndex];
+    Products.splice(productIndex, 1,{...req.body});
+    // console.log(product);
+    res.status(200).json({message:'Product Replace successfully'});
 });
+
+// Update Single Product
+app.patch('/products/update-product',(req, res) => {
+    const id = +req.query.id;
+    let productIndex = Products.findIndex((item)=>item.id === id);
+    let product = Products[productIndex];
+    Products.splice(productIndex, 1,{...product,...req.body});
+    // console.log(product);
+    res.status(200).json({message:'Product Update successfully'});
+});
+
+// Delete Single Product
+
+app.delete('/products/delete-product',(req, res) => {
+    const id = +req.query.id;
+    let productIndex = Products.findIndex((item)=>item.id === id);
+    Products.splice(productIndex, 1);
+    // console.log(product);
+    res.status(200).json({message:'Product Delete successfully'});
+});
+
+ app.listen(port,()=>{
+     console.log('Server Start at http://localhost:2828');
+ });
