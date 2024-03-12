@@ -1,7 +1,10 @@
 const express = require('express');
 const userRoutes = express.Router();
-const {registerUser,
+const { verifyToken} = require('../helpers/verifyTokan');
+const {
+    registerUser,
     loginUser,
+    getAllUsers,
     getUser,
     updateUser,
     deleteUser
@@ -9,8 +12,9 @@ const {registerUser,
 
 userRoutes.post('/register-user', registerUser);
 userRoutes.post('/login-user', loginUser);
-// userRoutes.get('/get-all-users', getAllUsers);
-// userRoutes.get('/get-user', getUser);
+userRoutes.get('/get-all-users',verifyToken, getAllUsers);
+userRoutes.get('/get-user',verifyToken, getUser);
 // userRoutes.put('/update-user', updateUser);
 // userRoutes.delete('/delete-user', deleteUser);
+
 module.exports = userRoutes;
