@@ -14,7 +14,7 @@ userRoutes.post('/register-user', registerUser);
 userRoutes.post('/login-user', loginUser);
 userRoutes.get('/get-all-users',verifyToken, getAllUsers);
 userRoutes.get('/get-user',verifyToken, getUser);
-// userRoutes.put('/update-user', updateUser);
-// userRoutes.delete('/delete-user', deleteUser);
+userRoutes.put('/update-user',verifyToken, updateUser);
+userRoutes.delete('/delete-user',verifyToken, deleteUser);
 
 module.exports = userRoutes;
