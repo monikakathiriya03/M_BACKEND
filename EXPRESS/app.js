@@ -4,6 +4,7 @@ const app = express();
 const port = 2727;
 const morgan = require('morgan');
 const mongoose = require('mongoose');
+const path = require('path');
 
 // Database connection
 async function main() {
@@ -15,8 +16,10 @@ main()
 .catch(err => console.log(err));
 
 // Middleware
+let imagePath = path.join(__dirname, 'public','images');
 app.use(express.json());
 app.use(morgan('dev'));
+app.use('/public/images', express.static(imagePath));
 
 const userRoutes = require('./routes/user.routes');
 const productRoutes = require('./routes/product.routes');

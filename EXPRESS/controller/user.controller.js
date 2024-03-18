@@ -101,3 +101,26 @@ exports.deleteUser = async (req, res) => {
         res.status(500).json({message: 'Internal Server Error'});
     }
 };
+
+exports.addNewUser = async(req, res) => {
+    try {
+        let { firstName, lastName, gender, email, password, age ,profileImage} = req.body; 
+        let user = await User.findOne({ email: email, isDelete: false});
+        // console.log(user);
+        if(user) {
+            return res.status(400).json({message: 'User is already registered...'})
+        }if(req.file){
+            console.log(req.file);
+            profileImage = req.file.path.replace(/\\/g, '/');
+        }
+        user = await User.create({
+            ...req.body,
+            profileImage
+        });
+        user.save();
+        res.status(201).json(user);
+    } catch (error) {
+        console.log(error);
+        res.status(500).json({message: 'Internal Server Error'});   
+    }
+};
