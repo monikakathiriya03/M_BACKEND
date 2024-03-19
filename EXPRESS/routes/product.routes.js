@@ -2,7 +2,7 @@ const express = require('express');
 const productRoutes = express.Router();
 const {verifyToken} = require('../helpers/verifyTokan');
 const {
-    registerProduct,
+    addProduct,
     loginProduct,
     getAllProducts,
     getProduct,
@@ -10,7 +10,7 @@ const {
     deleteProduct
 } = require('../controller/product.controller');
 
-productRoutes.post('/register-product', registerProduct);
+productRoutes.post('/add-product', addProduct);
 // productRoutes.post('/login-product', loginProduct);
 productRoutes.get('/get-all-products',verifyToken, getAllProducts);
 productRoutes.get('/get-product',verifyToken, getProduct);
