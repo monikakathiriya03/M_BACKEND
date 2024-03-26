@@ -16,7 +16,7 @@ async getProduct(body){
         return error.message;
     }
 }
-async getAllProduct(body){
+async getAllProducts(body){
     try {
         return await Product.find(body);
     }catch (error) {
